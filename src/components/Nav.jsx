@@ -2,13 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import menuIcon from '../assets/icons/menu.svg'
 import closeIcon from '../assets/icons/close.svg'
 
-const LINKS = [
-  { label: 'Home', href: '#top' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Guide', href: '#guide' },
-]
-
-export default function Nav({ onOpenFollow, followTriggerRef }) {
+export default function Nav({ links, onOpenFollow, followTriggerRef }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuButtonRef = useRef(null)
 
@@ -51,20 +45,20 @@ export default function Nav({ onOpenFollow, followTriggerRef }) {
         aria-label="Primary"
       >
         <ul className="nav__links" role="list">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <a className="nav__link" href={link.href} onClick={() => setMenuOpen(false)}>
+          {links.map((link) => (
+            <li key={link.label}>
+              <a
+                className="nav__link"
+                href={link.href}
+                aria-current={link.current ? 'page' : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
                 {link.label}
               </a>
             </li>
           ))}
           <li>
-            <button
-              ref={followTriggerRef}
-              type="button"
-              className="nav__follow"
-              onClick={onOpenFollow}
-            >
+            <button ref={followTriggerRef} type="button" className="nav__follow" onClick={onOpenFollow}>
               Follow Me
             </button>
           </li>

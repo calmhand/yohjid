@@ -1,8 +1,15 @@
 import photo from '../assets/images/guide.png'
 
-export default function GuideTeaser() {
+export default function GuideTeaser({
+  id = 'guide',
+  title = 'Learn more',
+  text = 'Read the full guide to product codes: every clothing line, garment type and season letter, plus the tag details that date a piece.',
+  cta = 'Learn more',
+  ctaHint = 'about product codes',
+  href = '/guide/',
+}) {
   return (
-    <section id="guide" className="guide" aria-labelledby="guide-title">
+    <section id={id} className="guide" aria-labelledby={`${id}-title`}>
       <div className="guide__card">
         <img
           className="guide__photo"
@@ -12,15 +19,13 @@ export default function GuideTeaser() {
           height="442"
         />
         <div className="guide__copy">
-          <h2 id="guide-title" className="guide__title">
-            Learn more
+          <h2 id={`${id}-title`} className="guide__title">
+            {title}
           </h2>
-          <p className="guide__text">
-            Read the full guide to product codes: every clothing line, garment type and season
-            letter, plus the tag details that date a piece.
-          </p>
-          <a className="btn btn--dark" href="/guide">
-            Learn more<span className="sr-only"> about product codes</span>
+          <p className="guide__text">{text}</p>
+          <a className="btn btn--dark" href={href}>
+            {cta}
+            {ctaHint && <span className="sr-only"> {ctaHint}</span>}
           </a>
         </div>
       </div>

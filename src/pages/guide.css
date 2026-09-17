@@ -1,0 +1,152 @@
+.guide-hero {
+  width: 100%;
+  aspect-ratio: 64 / 9;
+  min-height: 8rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.guide-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-section);
+  max-width: calc(var(--max-content) - 2 * 8rem);
+  margin: 0 auto;
+  padding: var(--space-section) var(--space-4);
+  font-family: var(--font-ui);
+}
+
+@media (min-width: 64rem) {
+  .guide-page {
+    padding-inline: var(--space-section);
+  }
+}
+
+.guide-page h1,
+.guide-page h2 {
+  font-family: var(--font-ui);
+  font-size: var(--text-display);
+  text-transform: none;
+}
+
+.guide-intro,
+.guide-page section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.guide-intro {
+  align-items: center;
+  text-align: center;
+}
+
+.guide-page p,
+.guide-bullets {
+  max-width: var(--measure);
+  font-size: var(--text-lead);
+  line-height: 1.5;
+}
+
+.guide-intro p {
+  max-width: none;
+}
+
+.guide-code {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.guide-bullets {
+  margin: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Code tiles */
+
+.tiles {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.08vw, 2.5rem);
+  width: 100%;
+}
+
+@media (min-width: 30rem) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 45rem) {
+  .tiles--5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .tiles--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .tiles--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-3);
+  aspect-ratio: 16 / 9;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-absence);
+  font-family: var(--font-ui);
+  font-weight: 700;
+}
+
+.tile--tall {
+  aspect-ratio: 3 / 4;
+}
+
+.tile--moss {
+  background: var(--color-moss);
+}
+
+.tile--indigo {
+  background: var(--color-indigo);
+}
+
+.tile--black {
+  background: var(--color-black);
+}
+
+.tile__code {
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1;
+}
+
+.tile--tall .tile__code {
+  font-size: clamp(3.5rem, 6.67vw, 8rem);
+}
+
+.tile__label {
+  font-size: clamp(1.25rem, 2.5vw, 3rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.tile__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-body);
+  line-height: 1.4;
+}

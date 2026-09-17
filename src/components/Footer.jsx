@@ -10,7 +10,7 @@ export default function Footer() {
         <p className="footer__text">
           A free decoder for Yohji Yamamoto product codes, built for collectors and resellers.
         </p>
-        <a className="btn btn--light" href="#how-it-works">
+        <a className="btn btn--light" href="/#how-it-works">
           Learn more<span className="sr-only"> about how it works</span>
         </a>
       </div>

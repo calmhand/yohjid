@@ -28,10 +28,12 @@ Yohji Yamamoto product codes follow the format `LS-TCC-MMM`:
 ## Project structure
 
 ```
+index.html, guide/index.html — two Vite entries: the decoder (/) and the guide (/guide/)
 src/
-├── App.jsx / App.css     — page composition + styles (design tokens live in index.css)
-├── components/           — Nav, Hero (decoder form), InfoDisplay, HowItWorks,
-│                           GuideTeaser, Footer, FollowMeModal
+├── App.jsx / App.css     — home page composition + styles (design tokens live in index.css)
+├── pages/GuidePage.jsx   — guide page: every line, season letter and type as tiles
+├── components/           — Layout, Nav, Hero (decoder form), InfoDisplay, HowItWorks,
+│                           GuideTeaser, CodeCard, Footer, FollowMeModal
 ├── assets/               — icons (Material Symbols + Simple Icons), images, fonts
 ├── lib/decode.js         — parsing + season-candidate resolution logic
 └── data/
@@ -53,7 +55,6 @@ npm run dev
 
 - **Cut/shape and material codes** aren't mapped yet — no reference key table exists for these two segments. The decoder shows the raw digits with a "not mapped yet" placeholder until that data is available.
 - **BL Melody font files** aren't included (commercial typeface). Drop `BLMelody-Regular.woff2` and `BLMelody-Bold.woff2` into `src/assets/fonts/` and the `@font-face` rules in `index.css` pick them up; until then the site falls back to a system sans-serif.
-- **Guide page** (`/guide`) isn't built yet — the "Learn more" link in the guide teaser is a stub.
 - **Social links** in `src/data/socials.js` point at platform roots until real profile URLs are added.
 
 ## Accessibility
