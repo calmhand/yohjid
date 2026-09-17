@@ -29,7 +29,10 @@ Yohji Yamamoto product codes follow the format `LS-TCC-MMM`:
 
 ```
 src/
-├── App.jsx / App.css     — UI: code input, disambiguation controls, live results
+├── App.jsx / App.css     — page composition + styles (design tokens live in index.css)
+├── components/           — Nav, Hero (decoder form), InfoDisplay, HowItWorks,
+│                           GuideTeaser, Footer, FollowMeModal
+├── assets/               — icons (Material Symbols + Simple Icons), images, fonts
 ├── lib/decode.js         — parsing + season-candidate resolution logic
 └── data/
     ├── clothingLines.js  — line letter → name (complete)
@@ -49,6 +52,13 @@ npm run dev
 ## Known gaps
 
 - **Cut/shape and material codes** aren't mapped yet — no reference key table exists for these two segments. The decoder shows the raw digits with a "not mapped yet" placeholder until that data is available.
+- **BL Melody font files** aren't included (commercial typeface). Drop `BLMelody-Regular.woff2` and `BLMelody-Bold.woff2` into `src/assets/fonts/` and the `@font-face` rules in `index.css` pick them up; until then the site falls back to a system sans-serif.
+- **Guide page** (`/guide`) isn't built yet — the "Learn more" link in the guide teaser is a stub.
+- **Social links** in `src/data/socials.js` point at platform roots until real profile URLs are added.
+
+## Accessibility
+
+Built to WCAG 2.2 AAA: all text meets 7:1 contrast (large text 4.5:1), visible focus rings, 44px minimum targets, skip link, semantic landmarks and headings, labelled form controls with visible help text, a live region for decoder results, a focus-trapping dialog with Escape/return-focus, `prefers-reduced-motion` support, and fluid type that survives 200% zoom.
 
 ## Stack
 
