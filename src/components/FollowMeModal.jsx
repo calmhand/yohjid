@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { SOCIALS } from '../data/socials.js'
 import closeIcon from '../assets/icons/close.svg'
+import { iconStyle } from '../lib/icon.js'
 
 const FOCUSABLE = 'a[href], button:not([disabled])'
 
@@ -60,7 +61,7 @@ export default function FollowMeModal({ open, onClose, returnFocusRef }) {
             Follow me
           </h2>
           <button ref={closeButtonRef} type="button" className="modal__close" onClick={onClose}>
-            <span className="icon modal__close-icon" style={{ '--icon': `url(${closeIcon})` }} aria-hidden="true" />
+            <span className="icon modal__close-icon" style={iconStyle(closeIcon)} aria-hidden="true" />
             <span className="sr-only">Close</span>
           </button>
         </div>
@@ -69,7 +70,7 @@ export default function FollowMeModal({ open, onClose, returnFocusRef }) {
             <li key={s.name}>
               <a className="modal__link" href={s.href} target="_blank" rel="noopener noreferrer">
                 <span className="modal__link-text">{s.name}</span>
-                <span className="icon modal__link-icon" style={{ '--icon': `url(${s.icon})` }} aria-hidden="true" />
+                <span className="icon modal__link-icon" style={iconStyle(s.icon)} aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </li>

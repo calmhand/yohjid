@@ -1,5 +1,6 @@
 import arrowIcon from '../assets/icons/arrow-right.svg'
 import chevronIcon from '../assets/icons/chevron-down.svg'
+import { iconStyle } from '../lib/icon.js'
 
 const SIGNAL_FIELDS = [
   {
@@ -69,7 +70,7 @@ export default function Hero({ code, onCodeChange, signals, onSignalChange, onSu
             maxLength={10}
           />
           <button type="submit" className="decoder__submit">
-            <span className="icon decoder__submit-icon" style={{ '--icon': `url(${arrowIcon})` }} aria-hidden="true" />
+            <span className="icon decoder__submit-icon" style={iconStyle(arrowIcon)} aria-hidden="true" />
             <span className="sr-only">Decode product code</span>
           </button>
         </div>
@@ -95,11 +96,7 @@ export default function Hero({ code, onCodeChange, signals, onSignalChange, onSu
                     </option>
                   ))}
                 </select>
-                <span
-                  className="icon signal__chevron"
-                  style={{ '--icon': `url(${chevronIcon})` }}
-                  aria-hidden="true"
-                />
+                <span className="icon signal__chevron" style={iconStyle(chevronIcon)} aria-hidden="true" />
               </div>
               <label htmlFor={`signal-${field.key}`} className="signal__label">
                 {field.label}

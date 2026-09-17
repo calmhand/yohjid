@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import menuIcon from '../assets/icons/menu.svg'
 import closeIcon from '../assets/icons/close.svg'
+import { iconStyle } from '../lib/icon.js'
 
 export default function Nav({ links, onOpenFollow, followTriggerRef }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -33,7 +34,7 @@ export default function Nav({ links, onOpenFollow, followTriggerRef }) {
       >
         <span
           className="icon nav__toggle-icon"
-          style={{ '--icon': `url(${menuOpen ? closeIcon : menuIcon})` }}
+          style={iconStyle(menuOpen ? closeIcon : menuIcon)}
           aria-hidden="true"
         />
         <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>

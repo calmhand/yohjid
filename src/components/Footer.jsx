@@ -1,5 +1,6 @@
 import { SOCIALS } from '../data/socials.js'
 import { withBase } from '../lib/paths.js'
+import { iconStyle } from '../lib/icon.js'
 import yfmLogo from '../assets/images/yfm-logo.svg'
 import sdnyLogo from '../assets/images/sdny-logo.png'
 
@@ -27,7 +28,7 @@ export default function Footer() {
           {SOCIALS.map((s) => (
             <li key={s.name}>
               <a className="socials__link" href={s.href} target="_blank" rel="noopener noreferrer">
-                <span className="icon socials__icon" style={{ '--icon': `url(${s.icon})` }} aria-hidden="true" />
+                <span className="icon socials__icon" style={iconStyle(s.icon)} aria-hidden="true" />
                 <span className="sr-only">
                   {s.name} (opens in a new tab)
                 </span>

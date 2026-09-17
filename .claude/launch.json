@@ -6,6 +6,12 @@
       "runtimeExecutable": "C:\\Users\\Pilot\\AppData\\Roaming\\JetBrains\\WebStorm2026.2\\node\\versions\\24.19.0\\node.exe",
       "runtimeArgs": ["node_modules/vite/bin/vite.js"],
       "port": 5173
+    },
+    {
+      "name": "yohjid-preview",
+      "runtimeExecutable": "C:\\Users\\Pilot\\AppData\\Roaming\\JetBrains\\WebStorm2026.2\\node\\versions\\24.19.0\\node.exe",
+      "runtimeArgs": ["node_modules/vite/bin/vite.js", "preview", "--port", "4173", "--strictPort"],
+      "port": 4173
     }
   ]
 }
