@@ -1,4 +1,5 @@
 import { SOCIALS } from '../data/socials.js'
+import { withBase } from '../lib/paths.js'
 import yfmLogo from '../assets/images/yfm-logo.svg'
 import sdnyLogo from '../assets/images/sdny-logo.png'
 
@@ -10,7 +11,7 @@ export default function Footer() {
         <p className="footer__text">
           A free decoder for Yohji Yamamoto product codes, built for collectors and resellers.
         </p>
-        <a className="btn btn--light" href="/#how-it-works">
+        <a className="btn btn--light" href={withBase('#how-it-works')}>
           Learn more<span className="sr-only"> about how it works</span>
         </a>
       </div>

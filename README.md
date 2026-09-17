@@ -51,6 +51,10 @@ npm install
 npm run dev
 ```
 
+## Deployment
+
+Every push to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml`, live at https://calmhand.github.io/yohjid/. The workflow sets `VITE_BASE=/yohjid/` because project sites are served from a subpath; internal links go through `import.meta.env.BASE_URL` (`src/lib/paths.js`) so the same build works at a root domain with `VITE_BASE` unset. `VITE_SITE_URL` in `.env` feeds the canonical/Open Graph URLs and should change alongside the host.
+
 ## Known gaps
 
 - **Cut/shape and material codes** aren't mapped yet — no reference key table exists for these two segments. The decoder shows the raw digits with a "not mapped yet" placeholder until that data is available.

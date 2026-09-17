@@ -4,13 +4,14 @@ import GuideTeaser from '../components/GuideTeaser.jsx'
 import { CLOTHING_LINES } from '../data/clothingLines.js'
 import { CLOTHING_TYPES } from '../data/clothingTypes.js'
 import { seasonsByLetter } from '../lib/seasons.js'
+import { BASE, withBase } from '../lib/paths.js'
 import hero from '../assets/images/guide-hero.png'
 import '../App.css'
 import './guide.css'
 
 const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Home', href: BASE },
+  { label: 'How It Works', href: withBase('#how-it-works') },
   { label: 'Guide', href: '#top', current: true },
 ]
 
@@ -129,7 +130,7 @@ export default function GuidePage() {
         text="Have a code in hand? Type it in and Yohjid breaks it down for you, live, as you type."
         cta="Decode a code"
         ctaHint=""
-        href="/"
+        href={BASE}
       />
     </Layout>
   )

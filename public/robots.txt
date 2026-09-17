@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calmhand.github.io/yohjid/sitemap.xml

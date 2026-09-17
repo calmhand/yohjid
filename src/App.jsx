@@ -5,12 +5,13 @@ import Hero from './components/Hero.jsx'
 import InfoDisplay from './components/InfoDisplay.jsx'
 import HowItWorks from './components/HowItWorks.jsx'
 import GuideTeaser from './components/GuideTeaser.jsx'
+import { withBase } from './lib/paths.js'
 import './App.css'
 
 const NAV_LINKS = [
   { label: 'Home', href: '#top', current: true },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Guide', href: '/guide/' },
+  { label: 'Guide', href: withBase('guide/') },
 ]
 
 export default function App() {

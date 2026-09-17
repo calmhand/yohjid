@@ -1,4 +1,5 @@
 import photo from '../assets/images/guide.png'
+import { withBase } from '../lib/paths.js'
 
 export default function GuideTeaser({
   id = 'guide',
@@ -6,7 +7,7 @@ export default function GuideTeaser({
   text = 'Read the full guide to product codes: every clothing line, garment type and season letter, plus the tag details that date a piece.',
   cta = 'Learn more',
   ctaHint = 'about product codes',
-  href = '/guide/',
+  href = withBase('guide/'),
 }) {
   return (
     <section id={id} className="guide" aria-labelledby={`${id}-title`}>
